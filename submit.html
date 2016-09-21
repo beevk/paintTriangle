@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dragging</title>
+
+	<script>
+		var px, py; //used to save points to check if clicked inside any triangle
+		var redraw = 0; //used for delete operation
+		var x1, y1, x2, y2, x3, y3; //Used to save co-ordinates for drawing
+		var flag = 0; //used for event trigger check
+
+		var selected = null; //used to store triangle number where (px,py) lies in
+
+		var genuine = false;
+		var p0 = [];
+		var p1 = [];
+		var p2 = [];
+		var color;
+
+		var isDown = false;
+		var drag = null; //used to set drag flag
+		var mouseDown = false;
+		
+		var dragging = false;
+		var val;
+	</script>
+
+	<style type="text/css">
+		#myCanvas {
+			margin-left: 100px;
+			margin-top: 0px;
+		}
+		#descr {
+			margin-left: 85%;
+			margin-top: 0%;
+		}
+		#title {
+			margin-left: 8%;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="title" height="100px" width="1000px">
+		This browser doesn't support Canvas!
+	</canvas>
+	<canvas id="myCanvas" height="450px" width="1000px" style="border:5px solid #f047a2">
+		Unsupported Browser
+	</canvas>
+	<div id="descr">
+			<button onclick="return eraseAll()">Erase All</button>
+	</div>
+
+	<script src="events.js"></script>
+	<script src="drag.js"></script>
+
+</body>
+</html>
